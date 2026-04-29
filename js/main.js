@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const desc = counitDescriptions[name];
       if (desc) {
         tag.setAttribute('title', desc);
-        tag.style.borderColor = 'rgba(139, 92, 246, 0.5)';
-        tag.style.background = 'rgba(139, 92, 246, 0.1)';
+        tag.style.borderColor = 'rgba(254, 132, 251, 0.5)';
+        tag.style.background = 'rgba(254, 132, 251, 0.1)';
       }
     });
 
@@ -163,5 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
       tag.style.background = '';
     });
   });
+
+  // --- Initialize Lucide Icons ---
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 
 });

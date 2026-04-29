@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sumate — Participá del movimiento | Counity</title>
   <meta name="description" content="Hay muchas formas de ser parte de Counity: explorar, participar en Co-Units, aliarte como organización, o sumarte para vivir en una Land.">
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -46,12 +46,12 @@
 
       <div class="grid grid-2 mt-xl" style="max-width: 900px; margin-left: auto; margin-right: auto;">
         <div class="card reveal reveal-delay-1" style="padding: var(--space-xl);">
-          <span style="font-size: 2.5rem; display: block; margin-bottom: var(--space-md);">🔍</span>
+          <i data-lucide="search" class="lucide-cyan" style="width: 40px; height: 40px; margin-bottom: var(--space-md); display: block;"></i>
           <h4>Explorar</h4>
           <p style="margin-top: var(--space-sm);">Seguinos en redes, leé el Pink Paper, conocé el proyecto. Empezá a orbitar la idea sin compromiso.</p>
           <div style="margin-top: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-xs);">
             <a href="https://www.instagram.com/counity.land/" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size: var(--text-sm);">
-              📸 Seguinos en Instagram
+              <i data-lucide="camera" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; stroke: var(--pink);"></i> Seguinos en Instagram
             </a>
             <a href="pink-paper.html" class="btn btn-ghost" style="font-size: var(--text-sm);">
               Descargá el Pink Paper <span class="arrow">→</span>
@@ -59,25 +59,25 @@
           </div>
         </div>
 
-        <div class="card featured reveal reveal-delay-2" style="padding: var(--space-xl); border-color: rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.03);">
-          <span style="font-size: 2.5rem; display: block; margin-bottom: var(--space-md);">🧩</span>
+        <div class="card featured reveal reveal-delay-2" style="padding: var(--space-xl); border-color: rgba(254, 132, 251, 0.3); background: rgba(254, 132, 251, 0.03);">
+          <i data-lucide="blocks" class="lucide-pink" style="width: 40px; height: 40px; margin-bottom: var(--space-md); display: block;"></i>
           <h4>Participar activamente</h4>
           <p style="margin-top: var(--space-sm);">Sumáte a una Co-Unit, colaborá en un proyecto específico, aportá desde lo que sabés hacer. Buscamos constructores, diseñadores, tecnólogos, facilitadores, regeneradores.</p>
           <a href="#formulario" class="btn btn-primary mt-lg" style="width: 100%; justify-content: center;">Quiero participar</a>
         </div>
 
         <div class="card reveal reveal-delay-3" style="padding: var(--space-xl);">
-          <span style="font-size: 2.5rem; display: block; margin-bottom: var(--space-md);">🤝</span>
+          <i data-lucide="users" class="lucide-pink" style="width: 40px; height: 40px; margin-bottom: var(--space-md); display: block;"></i>
           <h4>Aliarte</h4>
           <p style="margin-top: var(--space-sm);">Si representás una organización, fundación, cooperativa o universidad, exploremos alianzas estratégicas.</p>
           <a href="#formulario" class="btn btn-secondary mt-lg" style="width: 100%; justify-content: center;">Proponer alianza</a>
         </div>
 
         <div class="card reveal reveal-delay-4" id="habitar" style="padding: var(--space-xl); border-color: rgba(255, 184, 0, 0.3); background: rgba(255, 184, 0, 0.03);">
-          <span style="font-size: 2.5rem; display: block; margin-bottom: var(--space-md);">🏡</span>
+          <i data-lucide="home" class="lucide-yellow" style="width: 40px; height: 40px; margin-bottom: var(--space-md); display: block;"></i>
           <h4>Vivir en una Land</h4>
           <p style="margin-top: var(--space-sm);">Si te imaginás viviendo en una comunidad Counity, queremos conocerte. Estamos formando las primeras Lands.</p>
-          <a href="#formulario" class="btn btn-primary mt-lg" style="width: 100%; justify-content: center; background: linear-gradient(90deg, var(--orange), var(--coral), var(--magenta));">Quiero vivir en una Land</a>
+          <a href="quiero-vivir.html" class="btn btn-primary mt-lg" style="width: 100%; justify-content: center; background: linear-gradient(135deg, var(--cyan), var(--pink), var(--yellow));">Quiero vivir en una Land</a>
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@
         <div class="paradigm-cards" style="grid-template-columns: repeat(2, 1fr);">
           <div class="card reveal reveal-delay-1" style="padding: var(--space-lg);">
             <div class="paradigm-card">
-              <span class="paradigm-arrow">🔨</span>
+              <span class="paradigm-arrow"><i data-lucide="hammer"></i></span>
               <div>
                 <h5>Constructores de hábitat</h5>
                 <p>Arquitectos, bioconstructores, diseñadores de espacios habitables.</p>
@@ -105,7 +105,7 @@
           </div>
           <div class="card reveal reveal-delay-2" style="padding: var(--space-lg);">
             <div class="paradigm-card">
-              <span class="paradigm-arrow">🧬</span>
+              <span class="paradigm-arrow"><i data-lucide="dna"></i></span>
               <div>
                 <h5>Diseñadores de sistemas</h5>
                 <p>Personas que piensan en cómo se organizan las cosas, no solo en cómo se ven.</p>
@@ -114,7 +114,7 @@
           </div>
           <div class="card reveal reveal-delay-3" style="padding: var(--space-lg);">
             <div class="paradigm-card">
-              <span class="paradigm-arrow">💻</span>
+              <span class="paradigm-arrow"><i data-lucide="terminal"></i></span>
               <div>
                 <h5>Tecnólogos con propósito</h5>
                 <p>Devs, diseñadores Web3, builders que quieren usar la tecnología para coordinar, no para controlar.</p>
@@ -123,7 +123,7 @@
           </div>
           <div class="card reveal reveal-delay-4" style="padding: var(--space-lg);">
             <div class="paradigm-card">
-              <span class="paradigm-arrow">🌿</span>
+              <span class="paradigm-arrow"><i data-lucide="leaf"></i></span>
               <div>
                 <h5>Regeneradores de ecosistemas</h5>
                 <p>Agrónomos, permacultores, biólogos, personas que saben sanar la tierra.</p>
@@ -132,7 +132,7 @@
           </div>
           <div class="card reveal reveal-delay-1" style="padding: var(--space-lg);">
             <div class="paradigm-card">
-              <span class="paradigm-arrow">🎯</span>
+              <span class="paradigm-arrow"><i data-lucide="target"></i></span>
               <div>
                 <h5>Facilitadores</h5>
                 <p>Expertos en procesos colectivos, gobernanza participativa, mediación y cuidado grupal.</p>
@@ -141,7 +141,7 @@
           </div>
           <div class="card reveal reveal-delay-2" style="padding: var(--space-lg);">
             <div class="paradigm-card">
-              <span class="paradigm-arrow">✨</span>
+              <span class="paradigm-arrow"><i data-lucide="sparkles"></i></span>
               <div>
                 <h5>Exploradores de nuevas formas de vivir</h5>
                 <p>Personas que no encajan en una sola categoría pero sienten que hay otro modo posible.</p>
@@ -201,6 +201,7 @@
   </footer>
 
   <script src="https://tally.so/widgets/embed.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

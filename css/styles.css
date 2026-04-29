@@ -56,16 +56,14 @@
 /* --- Design Tokens --- */
 :root {
   /* Brand Gradient Colors */
-  --cyan: #00B4FF;
-  --violet: #8B5CF6;
-  --magenta: #FF47D1;
-  --coral: #FF8A80;
-  --orange: #FFB800;
+  --cyan: #01AAFB;
+  --pink: #FE84FB;
+  --yellow: #FFBE02;
 
   /* Brand Gradient */
-  --gradient-brand: linear-gradient(135deg, var(--cyan), var(--violet), var(--magenta), var(--coral), var(--orange));
-  --gradient-brand-horizontal: linear-gradient(90deg, var(--cyan), var(--violet), var(--magenta), var(--coral), var(--orange));
-  --gradient-brand-subtle: linear-gradient(135deg, rgba(0,180,255,0.15), rgba(139,92,246,0.15), rgba(255,71,209,0.15));
+  --gradient-brand: linear-gradient(135deg, var(--cyan), var(--pink), var(--yellow));
+  --gradient-brand-horizontal: linear-gradient(135deg, var(--cyan), var(--pink), var(--yellow));
+  --gradient-brand-subtle: linear-gradient(135deg, rgba(1, 170, 251, 0.15), rgba(254, 132, 251, 0.15), rgba(255, 190, 2, 0.15));
 
   /* Backgrounds */
   --bg-primary: #0A0A0F;
@@ -283,7 +281,7 @@ section {
 }
 
 .logo img {
-  height: 32px;
+  height: 48px;
   width: auto;
 }
 
@@ -440,6 +438,50 @@ section {
 .card p {
   font-size: var(--text-sm);
   color: var(--text-tertiary);
+}
+
+/* --- Lucide Icons --- */
+.lucide {
+  stroke: var(--cyan);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 8px rgba(1, 170, 251, 0.4));
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.card:hover .lucide {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(1, 170, 251, 0.6));
+}
+
+.lucide-pink {
+  stroke: var(--pink);
+  filter: drop-shadow(0 0 8px rgba(254, 132, 251, 0.4));
+}
+
+.card:hover .lucide-pink {
+  filter: drop-shadow(0 0 12px rgba(254, 132, 251, 0.6));
+}
+
+.lucide-yellow {
+  stroke: var(--yellow);
+  filter: drop-shadow(0 0 8px rgba(255, 190, 2, 0.4));
+}
+
+.card:hover .lucide-yellow {
+  filter: drop-shadow(0 0 12px rgba(255, 190, 2, 0.6));
+}
+
+/* Center icons in centered containers */
+.lands-cta-box .lucide,
+.lands-cta-box .lucide-cyan,
+.lands-cta-box .lucide-pink,
+.lands-cta-box .lucide-yellow,
+.text-center .lucide,
+.text-center .lucide-cyan,
+.text-center .lucide-pink,
+.text-center .lucide-yellow {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --- Grid --- */

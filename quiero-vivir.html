@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiero vivir en una Land — Habitar el futuro | Counity</title>
+  <meta name="description" content="Sumate a la lista de personas interesadas en habitar las primeras Lands de Counity. Estamos diseñando una forma de vida conectada, regenerativa y en red.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(1, 170, 251, 0.2);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: var(--space-lg);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: var(--text-md);
+      transition: all var(--duration-fast) var(--ease-out);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(1, 170, 251, 0.2);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+
+    .form-success i {
+      font-size: 48px;
+      margin-bottom: var(--space-md);
+    }
+
+    .btn-submit {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+      font-size: var(--text-md);
+      cursor: pointer;
+      border: none;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm);
+      margin-top: var(--space-xs);
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .checkbox-item input {
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.png" alt="Counity"></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="que-es.html">Qué es</a>
+        <a href="como-funciona.html">Cómo funciona</a>
+        <a href="las-lands.html">Las Lands</a>
+        <a href="pink-paper.html">Pink Paper</a>
+        <a href="sumate.html" class="btn btn-primary">Sumate</a>
+      </nav>
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-header" style="min-height: 40vh; display: flex; align-items: center;">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <span class="text-label">Habitantes</span>
+      <h1 class="mt-md">Quiero vivir en una <span class="text-gradient">Counity Land</span></h1>
+      <p class="mt-md" style="max-width: 600px; margin-left: auto; margin-right: auto;">Estamos diseñando las primeras comunidades en territorio. Sumáte para ser parte del proceso y recibir actualizaciones sobre las primeras aperturas.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="form-container reveal">
+        <form id="landInhabitantForm">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="ubicacion">¿Dónde vivís actualmente? (Ciudad, País)</label>
+            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Buenos Aires, Argentina" required>
+          </div>
+
+          <div class="form-group">
+            <label for="hogar">¿Con quién vivirías?</label>
+            <select id="hogar" name="hogar" required>
+              <option value="" disabled selected>Seleccioná una opción</option>
+              <option value="solo">Solo/a</option>
+              <option value="pareja">En pareja</option>
+              <option value="familia-pequena">Familia pequeña (1-2 hijos)</option>
+              <option value="familia-grande">Familia grande (3+ hijos)</option>
+              <option value="amigos">Con amigos</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="intereses">¿Qué te atrae de vivir en una Land? (Seleccioná las que apliquen)</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="naturaleza"> Conexión con la naturaleza</label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="comunidad"> Vida comunitaria</label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="regeneracion"> Prácticas regenerativas</label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="educacion"> Educación alternativa</label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="trabajo"> Trabajo remoto en red</label>
+              <label class="checkbox-item"><input type="checkbox" name="interes" value="seguridad"> Seguridad y entorno sano</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="profesion">¿A qué te dedicás? / ¿Qué skills podrías aportar a la comunidad?</label>
+            <textarea id="profesion" name="profesion" placeholder="Contanos brevemente sobre tu perfil profesional o tus habilidades..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="etapa">¿En qué etapa estás?</label>
+            <select id="etapa" name="etapa" required>
+              <option value="" disabled selected>Seleccioná una opción</option>
+              <option value="curioso">Solo explorando la idea</option>
+              <option value="planificando">Planificando un cambio a mediano plazo (1-2 años)</option>
+              <option value="listo">Listo para mudarme en cuanto haya una Land disponible</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+            Enviar mi interés <i data-lucide="send" style="width: 18px; height: 18px; margin-left: 8px;"></i>
+          </button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <i data-lucide="check-circle" class="lucide-cyan" style="width: 64px; height: 64px; margin: 0 auto var(--space-md); display: block;"></i>
+          <h3 class="text-gradient">¡Gracias por tu interés!</h3>
+          <p class="mt-md">Recibimos tus datos correctamente. Esto nos ayuda muchísimo a validar la necesidad de las primeras Lands y a diseñarlas pensando en personas como vos.</p>
+          <p class="mt-sm" style="color: var(--text-tertiary);">Te mantendremos al tanto de los avances por email.</p>
+          <a href="index.html" class="btn btn-secondary mt-xl">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <a href="index.html" class="logo"><img src="assets/logo.png" alt="Counity"></a>
+          <span class="footer-tagline">Habitar el futuro en red</span>
+        </div>
+        <div class="footer-links">
+          <a href="que-es.html">Qué es</a>
+          <a href="como-funciona.html">Cómo funciona</a>
+          <a href="las-lands.html">Las Lands</a>
+          <a href="pink-paper.html">Pink Paper</a>
+          <a href="sumate.html">Sumate</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/counity.land/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('landInhabitantForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const originalText = submitBtn.innerHTML;
+      
+      // Mock loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Enviando...';
+      
+      // Mock data processing
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      console.log('Form submission (mock):', data);
+      
+      setTimeout(() => {
+        document.getElementById('landInhabitantForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+        
+        // Scroll to top of success message
+        window.scrollTo({
+          top: document.querySelector('.form-container').offsetTop - 100,
+          behavior: 'smooth'
+        });
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
