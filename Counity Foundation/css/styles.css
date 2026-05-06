@@ -331,6 +331,12 @@ section {
   font-weight: 600;
   transition: all var(--duration-normal) var(--ease-out);
   white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: var(--text-md);
 }
 
 .btn-primary {
@@ -338,6 +344,7 @@ section {
   color: var(--bg-primary);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
 }
 
 .btn-primary::before {
@@ -384,6 +391,31 @@ section {
 
 .btn-ghost:hover .arrow {
   transform: translateX(4px);
+}
+
+/* Why: Manifesto CTA needs more visual weight than ghost but less than primary */
+.btn-manifesto {
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--bg-primary), var(--bg-primary)), var(--gradient-brand-horizontal);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  padding: 14px 32px;
+  font-size: var(--text-base);
+  color: var(--text-primary);
+}
+
+.btn-manifesto:hover {
+  background-image: linear-gradient(var(--bg-card-hover), var(--bg-card-hover)), var(--gradient-brand-horizontal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(1, 170, 251, 0.15);
+}
+
+.btn-manifesto svg {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.btn-manifesto:hover svg {
+  transform: translate(3px, -3px);
 }
 
 /* --- Cards --- */
@@ -509,12 +541,13 @@ section {
 /* --- Hero Section --- */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: calc(var(--header-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+  padding: calc(var(--header-height) + var(--space-lg)) var(--space-md) var(--space-lg);
   position: relative;
   overflow: hidden;
 }
@@ -606,12 +639,12 @@ section {
 }
 
 .hero h1 {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .hero p {
   font-size: var(--text-lg);
-  margin: 0 auto var(--space-lg);
+  margin: 0 auto var(--space-md);
   max-width: 600px;
 }
 
@@ -1282,3 +1315,1053 @@ section {
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
 .mb-xl { margin-bottom: var(--space-xl); }
+
+/* ============================================
+   COUNITY FOUNDATION — Extended Components
+   ============================================ */
+
+/* --- Manifesto Text --- */
+.manifesto-text {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: var(--text-lg);
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+.manifesto-text p {
+  max-width: none;
+  margin-bottom: var(--space-lg);
+}
+
+.manifesto-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* --- Certezas (Manifesto list) --- */
+.certezas-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.certezas-list li {
+  padding-left: var(--space-lg);
+  position: relative;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.certezas-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gradient-brand-horizontal);
+}
+
+/* --- Principles --- */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.principle-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: default;
+}
+
+.principle-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+.principle-card .principle-number {
+  font-family: var(--font-secondary);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.principle-card h4 {
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-xl);
+}
+
+.principle-card p {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  max-width: none;
+  line-height: 1.7;
+}
+
+/* --- Co-Unit Expandable Cards --- */
+.counits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.counit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.counit-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--border-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.counit-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+}
+
+.counit-card:hover::before,
+.counit-card.active::before {
+  opacity: 1;
+}
+
+.counit-card.active {
+  background: var(--bg-card-hover);
+}
+
+.counit-card h5 {
+  font-size: var(--text-sm);
+  margin-top: var(--space-xs);
+}
+
+.counit-card-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  background: var(--gradient-brand-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Co-Unit expanded detail */
+.counit-detail {
+  display: none;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-top: var(--space-md);
+  grid-column: 1 / -1;
+  text-align: left;
+  animation: fadeSlideIn 0.4s var(--ease-out);
+}
+
+.counit-detail.visible {
+  display: block;
+}
+
+.counit-detail p {
+  max-width: none;
+  margin-bottom: var(--space-md);
+}
+
+.counit-detail .btn {
+  margin-top: var(--space-sm);
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Ecosystem Layers (Cómo Funciona) --- */
+.layer-section {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.layer-section:last-child {
+  border-bottom: none;
+}
+
+.layer-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.layer-indicator {
+  width: 4px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.layer-section p {
+  max-width: 700px;
+  font-size: var(--text-base);
+  line-height: 1.8;
+}
+
+/* --- Mycelium Zone (Hero + Canvas combined) --- */
+.mycelium-zone {
+  position: relative;
+  width: 100%;
+  /* Why: Total zone = hero band (~40vh) + network canvas (~60vh visible below) */
+  height: 150vh;
+  overflow: hidden;
+  background: #030305;
+}
+
+/* Canvas fills the entire zone behind the hero band */
+.mycelium-zone .mycelium-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  background: transparent;
+}
+
+.mycelium-hero-band {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  /* Usamos un glassmorphism súper suave sin negro sólido y un gradiente para que se funda abajo */
+  background: linear-gradient(to bottom, rgba(3, 3, 5, 0.3) 0%, rgba(3, 3, 5, 0) 100%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* Un borde sutil para que no parezca una "franja" pesada */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Aumentamos la altura mínima para darle más presencia al hero y espacio para que la red quede bien enmarcada */
+  min-height: 55vh;
+  /* Pegado al menú reduciendo el espacio superior */
+  padding: calc(var(--header-height) + var(--space-sm)) var(--space-md) var(--space-md);
+  pointer-events: none;
+}
+
+.mycelium-hero-content {
+  text-align: center;
+  max-width: 1000px;
+  padding: 0 var(--space-md);
+}
+
+.mycelium-hero-content h1 {
+  /* Título escalable que no se rompe en monitores pequeños */
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.7);
+  line-height: 1.1;
+}
+
+.mycelium-hero-content p {
+  color: var(--text-secondary);
+  text-shadow: 0 1px 20px rgba(0,0,0,0.6);
+  max-width: 500px;
+  margin: var(--space-sm) auto 0;
+}
+
+.mycelium-hero-scroll {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-tertiary);
+  font-size: var(--text-xs);
+  font-family: var(--font-secondary);
+  animation: pulse-down 2s ease-in-out infinite;
+}
+
+/* --- Mycelium Canvas Container (fallback for standalone use) --- */
+.mycelium-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #030305;
+  margin: var(--space-xl) 0;
+}
+
+.mycelium-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+.mycelium-container canvas:active {
+  cursor: grabbing;
+}
+
+.mycelium-legend {
+  position: absolute;
+  /* Why: Position within the visible network area, not at zone bottom */
+  bottom: calc(150vh * 0.03);
+  left: var(--space-md);
+  display: flex;
+  gap: var(--space-md);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  font-family: var(--font-secondary);
+  z-index: 5;
+}
+
+.mycelium-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mycelium-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.mycelium-hint {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  font-family: var(--font-secondary);
+  animation: hintPulse 3s ease-in-out infinite;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; border-color: rgba(255,255,255,0.2); }
+}
+
+@keyframes pulse-down {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+}
+
+/* Mycelium info panel (inside container) */
+.mycelium-panel {
+  position: fixed;
+  right: -340px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  padding: var(--space-lg);
+  background: rgba(8,8,15,0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-right: none;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  transition: right 0.5s var(--ease-out), bottom 0.4s var(--ease-out);
+  z-index: 100;
+}
+
+.mycelium-panel.visible {
+  right: 0;
+}
+
+.mycelium-panel h4 {
+  margin-bottom: var(--space-xs);
+}
+
+.mycelium-panel p {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  max-width: none;
+}
+
+.mycelium-panel .panel-tag {
+  font-family: var(--font-secondary);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.mycelium-panel .close-btn {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* --- Zona B: Ecosystem Layout (Two-Column with Sticky Sidebar) --- */
+.ecosystem-section {
+  padding: var(--space-2xl) 0;
+}
+
+.ecosystem-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.ecosystem-sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-lg));
+  height: fit-content;
+}
+
+.companion-canvas-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #030305;
+  border: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.companion-canvas-wrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.companion-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--space-md);
+}
+
+.companion-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-family: var(--font-secondary);
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.companion-nav-item:hover {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+}
+
+.companion-nav-item.active {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.companion-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ecosystem-content {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .ecosystem-layout {
+    grid-template-columns: 1fr;
+  }
+  .ecosystem-sidebar {
+    display: none;
+  }
+}
+
+/* --- Zona C: Ecosystem Scale Visualization --- */
+.ecosystem-scale {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  background: #030305;
+}
+
+.ecosystem-scale-canvas-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.ecosystem-scale-canvas-wrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ecosystem-scale-overlay {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.ecosystem-scale-overlay h2 {
+  text-shadow: 0 2px 30px rgba(0,0,0,0.7);
+}
+
+.ecosystem-scale-overlay p {
+  max-width: 550px;
+  color: var(--text-secondary);
+  text-shadow: 0 1px 20px rgba(0,0,0,0.8);
+  margin-top: var(--space-sm);
+}
+
+/* --- Profile Cards --- */
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.profile-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.profile-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--border-medium);
+}
+
+.profile-card h4 {
+  margin-bottom: var(--space-xs);
+}
+
+.profile-card p {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  max-width: none;
+}
+
+/* --- Participate Options (Sumate detailed) --- */
+.participate-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.participate-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.participate-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+}
+
+.participate-item .card-icon {
+  margin-bottom: 0;
+}
+
+.participate-item h4 {
+  margin-bottom: var(--space-xs);
+}
+
+.participate-item p {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  max-width: none;
+}
+
+/* --- Tally Embed --- */
+.tally-embed-wrapper {
+  width: 100%;
+  max-width: 700px;
+  margin: var(--space-xl) auto;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.tally-embed-wrapper iframe {
+  width: 100%;
+  min-height: 500px;
+  border: none;
+}
+
+/* --- Team Grid --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.team-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.team-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--border-medium);
+}
+
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-md);
+  background: var(--gradient-brand-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--text-tertiary);
+}
+
+.team-card h4 {
+  margin-bottom: 4px;
+}
+
+.team-card .team-role {
+  font-family: var(--font-secondary);
+  font-size: var(--text-xs);
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm);
+}
+
+.team-card p {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  max-width: none;
+}
+
+.team-card .team-links {
+  margin-top: var(--space-md);
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.team-card .team-links a {
+  color: var(--text-tertiary);
+  transition: color var(--duration-fast);
+}
+
+.team-card .team-links a:hover {
+  color: var(--text-primary);
+}
+
+/* --- Pink Paper Form Gate --- */
+.pp-gate {
+  max-width: 500px;
+  margin: var(--space-xl) auto;
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.pp-gate h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.pp-gate > p {
+  margin: 0 auto var(--space-lg);
+  font-size: var(--text-sm);
+}
+
+.pp-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.pp-form input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  transition: border-color var(--duration-fast);
+  outline: none;
+}
+
+.pp-form input:focus {
+  border-color: var(--cyan);
+}
+
+.pp-form input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.pp-form .btn {
+  width: 100%;
+  margin-top: var(--space-xs);
+}
+
+/* Success state */
+.pp-gate.success .pp-form {
+  display: none;
+}
+
+.pp-success {
+  display: none;
+}
+
+.pp-gate.success .pp-success {
+  display: block;
+}
+
+.pp-success p {
+  margin-bottom: var(--space-md);
+}
+
+/* --- Newsletter Form (simple) --- */
+.newsletter-form {
+  display: flex;
+  gap: var(--space-sm);
+  max-width: 460px;
+  margin: var(--space-lg) auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  outline: none;
+  transition: border-color var(--duration-fast);
+}
+
+.newsletter-form input:focus {
+  border-color: var(--cyan);
+}
+
+.newsletter-form input::placeholder {
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+/* --- Firma Simbólica --- */
+.section-firma {
+  padding: var(--space-2xl) 0;
+}
+
+.firma-box {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Why: Gradient border trick via pseudo-element + mask composite */
+.firma-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--border-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+}
+
+.firma-ornament {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.firma-box h3 {
+  font-size: var(--text-2xl);
+}
+
+.firma-box > p {
+  margin: 0 auto;
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.firma-input-group {
+  display: flex;
+  gap: var(--space-sm);
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.firma-input-group input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  outline: none;
+  transition: border-color var(--duration-fast);
+}
+
+.firma-input-group input:focus {
+  border-color: var(--cyan);
+}
+
+.firma-input-group input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.firma-success {
+  display: none;
+}
+
+.firma-box.signed .firma-form { display: none; }
+.firma-box.signed .firma-success { display: block; }
+
+.firma-check {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gradient-brand-subtle);
+  color: var(--cyan);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  animation: firmaCheckPop 0.4s var(--ease-out);
+}
+
+@keyframes firmaCheckPop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.firma-counter {
+  font-family: var(--font-secondary);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+.firma-count {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .firma-input-group {
+    flex-direction: column;
+  }
+  .firma-box {
+    padding: var(--space-lg);
+  }
+}
+
+/* --- PP Content Grid --- */
+.pp-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .pp-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pp-content-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.pp-content-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+}
+
+.pp-content-card h4 {
+  margin-bottom: var(--space-xs);
+}
+
+.pp-content-card p {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  max-width: none;
+}
+
+/* --- Responsive extras --- */
+@media (max-width: 768px) {
+  .counits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Only standalone containers get reduced height, not hero */
+  .mycelium-container:not(.mycelium-hero .mycelium-container) {
+    height: 350px;
+  }
+  .mycelium-panel {
+    width: 100%;
+    right: 0;
+    top: auto;
+    bottom: -100%;
+    transform: none;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: none;
+  }
+  .mycelium-panel.visible {
+    bottom: 0;
+  }
+  .mycelium-zone {
+    min-height: 120vh;
+  }
+  .mycelium-hero-band {
+    min-height: 35vh;
+  }
+  .mycelium-hero-content h1 {
+    font-size: var(--text-2xl);
+  }
+  .ecosystem-scale {
+    height: 350px;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .counits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Hint Texts */
+.hint-mobile { display: none; }
+@media (max-width: 768px) {
+  .hint-desktop { display: none; }
+  .hint-mobile { display: inline; }
+}
+
+
+@media (max-width: 768px) {
+  .mycelium-hero-band {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: linear-gradient(to bottom, rgba(3, 3, 5, 0.8) 0%, rgba(3, 3, 5, 0) 50%);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .mycelium-hero-band {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: linear-gradient(to bottom, rgba(3, 3, 5, 0.3) 0%, rgba(3, 3, 5, 0) 100%);
+  }
+  .mycelium-legend { display: none; }
+}
+

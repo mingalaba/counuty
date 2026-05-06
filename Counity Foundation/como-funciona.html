@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo Funciona — Counity Foundation</title>
+  <meta name="description" content="Counity se organiza como una red descentralizada con 5 capas: Foundation, Co-Units, Lands, Nodos y Weave.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/styles.css?v=15">
+</head>
+<body>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.png" alt="Counity Foundation" id="headerLogo"></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="manifiesto.html">Manifiesto</a>
+        <a href="como-funciona.html">Cómo funciona</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="pink-paper.html">Pink Paper</a>
+        <a href="sumate.html" class="btn btn-primary">Involúcrate</a>
+      </nav>
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Zona A: Hero + Mycelium Network -->
+    <section class="mycelium-zone" id="myceliumZone">
+      <!-- Panel de detalles fuera del container para evadir el stacking context -->
+      <div class="mycelium-panel" id="myceliumPanel">
+        <button class="close-btn" id="myceliumPanelClose">&times;</button>
+        <span class="panel-tag" id="myceliumPanelTag">—</span>
+        <h4 id="myceliumPanelTitle">—</h4>
+        <p id="myceliumPanelDesc">—</p>
+      </div>
+
+      <!-- Canvas spans the entire zone (behind hero + below) -->
+      <div class="mycelium-container" id="myceliumContainer">
+        <canvas id="myceliumCanvas"></canvas>
+        <div class="mycelium-legend">
+          <div class="mycelium-legend-item"><div class="mycelium-legend-dot" style="background:#00e6b8"></div>Foundation</div>
+          <div class="mycelium-legend-item"><div class="mycelium-legend-dot" style="background:#00bcd4"></div>Co-Units</div>
+          <div class="mycelium-legend-item"><div class="mycelium-legend-dot" style="background:#d4a017"></div>Lands</div>
+          <div class="mycelium-legend-item"><div class="mycelium-legend-dot" style="background:#7c8594"></div>Nodos</div>
+          <div class="mycelium-legend-item"><div class="mycelium-legend-dot" style="background:linear-gradient(135deg,#01AAFB,#FE84FB,#FFBE02);"></div>Weave</div>
+        </div>
+      </div>
+
+      <!-- Hero text zone: sits on top of the canvas con un filtro suave -->
+      <div class="mycelium-hero-band">
+        <div class="mycelium-hero-content">
+          <span class="text-label">Ecosistema</span>
+          <h1 class="mt-md">Una arquitectura viva <span class="text-gradient">para el cambio.</span></h1>
+          <p>No somos una estructura rígida, somos una red interdependiente.</p>
+        </div>
+        <div class="mycelium-hero-scroll">
+          <span>Explorá las capas</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+        <div class="mycelium-hint mt-md" style="color: var(--text-tertiary); font-size: var(--text-sm); font-family: var(--font-secondary);">
+          <span class="hint-desktop">Arrastrá para explorar · Click para descubrir</span>
+          <span class="hint-mobile">Tocá los nodos para descubrir</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zona B: Ecosystem Layers with Scroll Companion -->
+    <section class="ecosystem-section">
+      <div class="container">
+        <div class="ecosystem-layout">
+
+          <!-- Sidebar: Scroll companion mini-canvas -->
+          <aside class="ecosystem-sidebar" id="ecosystemSidebar">
+            <div class="companion-canvas-wrap" id="companionContainer">
+              <canvas id="companionCanvas"></canvas>
+            </div>
+            <nav class="companion-nav" id="companionNav">
+              <a href="#layer-foundation" class="companion-nav-item active" data-layer="foundation">
+                <span class="companion-dot" style="background:#00e6b8;"></span> Foundation
+              </a>
+              <a href="#layer-counits" class="companion-nav-item" data-layer="counit">
+                <span class="companion-dot" style="background:#00bcd4;"></span> Co-Units
+              </a>
+              <a href="#layer-lands" class="companion-nav-item" data-layer="land">
+                <span class="companion-dot" style="background:#d4a017;"></span> Lands
+              </a>
+              <a href="#layer-nodos" class="companion-nav-item" data-layer="nodo">
+                <span class="companion-dot" style="background:#7c8594;"></span> Nodos
+              </a>
+              <a href="#layer-weave" class="companion-nav-item" data-layer="weave">
+                <span class="companion-dot" style="background:linear-gradient(135deg,#01AAFB,#FE84FB,#FFBE02);"></span> Weave
+              </a>
+            </nav>
+          </aside>
+
+          <!-- Main content: Layer sections -->
+          <div class="ecosystem-content">
+            <div class="layer-section reveal" id="layer-foundation" data-layer="foundation">
+              <div class="layer-header">
+                <div class="layer-indicator" style="background:#00e6b8;"></div>
+                <div>
+                  <span class="text-label">Capa 1</span>
+                  <h3 class="mt-sm">Counity Foundation <span class="text-gradient">(El Núcleo)</span></h3>
+                </div>
+              </div>
+              <p>El espacio de coordinación global. No dirige las operaciones internas de los nodos, sino que custodia la visión, articula decisiones estratégicas, distribuye recursos y mantiene la infraestructura común. Es el punto de anclaje de toda la red de donde emana el propósito del ecosistema.</p>
+            </div>
+
+            <div class="layer-section reveal" id="layer-counits" data-layer="counit">
+              <div class="layer-header">
+                <div class="layer-indicator" style="background:#00bcd4;"></div>
+                <div>
+                  <span class="text-label">Capa 2</span>
+                  <h3 class="mt-sm">Co-Units <span class="text-gradient">(Los Laboratorios)</span></h3>
+                </div>
+              </div>
+              <p>Unidades funcionales descentralizadas que investigan, desarrollan y sostienen dimensiones clave del ecosistema.</p>
+              <div class="counits-grid mt-md" id="counitsGridCF">
+                <div class="counit-card" data-counit="co-gov">
+                  <div class="counit-card-icon"><i data-lucide="scale" class="lucide" style="width:24px;height:24px;"></i></div>
+                  <h5>Co-Gov</h5>
+                </div>
+                <div class="counit-card" data-counit="co-learn">
+                  <div class="counit-card-icon"><i data-lucide="book-open" class="lucide-pink" style="width:24px;height:24px;"></i></div>
+                  <h5>Co-Learn</h5>
+                </div>
+                <div class="counit-card" data-counit="co-regen">
+                  <div class="counit-card-icon"><i data-lucide="leaf" class="lucide" style="width:24px;height:24px;"></i></div>
+                  <h5>Co-Regen</h5>
+                </div>
+                <div class="counit-card" data-counit="co-live">
+                  <div class="counit-card-icon"><i data-lucide="home" class="lucide-yellow" style="width:24px;height:24px;"></i></div>
+                  <h5>Co-Live</h5>
+                </div>
+                <div class="counit-card" data-counit="co-care">
+                  <div class="counit-card-icon"><i data-lucide="heart" class="lucide-pink" style="width:24px;height:24px;"></i></div>
+                  <h5>Co-Care</h5>
+                </div>
+                <div class="counit-card" data-counit="co-story">
+                  <div class="counit-card-icon"><i data-lucide="pen-tool" class="lucide-yellow" style="width:24px;height:24px;"></i></div>
+                  <h5>Co-Story</h5>
+                </div>
+                <div class="counit-card" data-counit="co-territory">
+                  <div class="counit-card-icon"><i data-lucide="map-pin" class="lucide" style="width:24px;height:24px;"></i></div>
+                  <h5>Co-Territory</h5>
+                </div>
+                <div class="counit-detail" id="counitDetailCF">
+                  <h4>—</h4>
+                  <p>—</p>
+                  <a href="https://tally.so/r/3EOEdB" target="_blank" rel="noopener" class="btn btn-secondary">Aplicar a esta Co-Unit</a>
+                </div>
+              </div>
+              <p class="mt-md" style="font-style:italic;font-size:var(--text-sm);color:var(--text-tertiary);">Son equipos interdisciplinarios. Una sola Land es el resultado de múltiples Co-Units trabajando en conjunto de forma sistémica.</p>
+            </div>
+
+            <div class="layer-section reveal" id="layer-lands" data-layer="land">
+              <div class="layer-header">
+                <div class="layer-indicator" style="background:#d4a017;"></div>
+                <div>
+                  <span class="text-label">Capa 3</span>
+                  <h3 class="mt-sm">Lands <span class="text-gradient">(Hábitats en Territorio)</span></h3>
+                </div>
+              </div>
+              <p>Nuestras "Smart Villages". Donde la vida ocurre, el suelo se regenera y las personas habitan. Es la materialización física de la red en el territorio. Cada Land adapta los principios de Counity a su contexto ecosistémico y humano.</p>
+              <a href="#" class="btn btn-manifesto mt-md" style="display: inline-flex; align-items: center; gap: var(--space-xs);">
+                <span>Conocer Counity Lands</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+
+            <div class="layer-section reveal" id="layer-nodos" data-layer="nodo">
+              <div class="layer-header">
+                <div class="layer-indicator" style="background:#7c8594;"></div>
+                <div>
+                  <span class="text-label">Capa 4</span>
+                  <h3 class="mt-sm">Nodos <span class="text-gradient">(La Red Expandida)</span></h3>
+                </div>
+              </div>
+              <p>Comunidades y organizaciones aliadas que, sin ser Lands construidas desde cero, adoptan el protocolo Counity. Permiten que el ecosistema se expanda e intercambie valor con el exterior, aumentando la resiliencia global de la red.</p>
+            </div>
+
+            <div class="layer-section reveal" id="layer-weave" data-layer="weave">
+              <div class="layer-header">
+                <div class="layer-indicator" style="background:var(--gradient-brand-horizontal);"></div>
+                <div>
+                  <span class="text-label">Capa 5</span>
+                  <h3 class="mt-sm">Weave <span class="text-gradient">(La Infraestructura Invisible)</span></h3>
+                </div>
+              </div>
+              <p>La infraestructura tecnológica Web3 que sostiene todo. Permite que la reputación, los acuerdos y la gobernanza fluyan con transparencia por toda la red, conectando a la Foundation, Co-Units, Lands y Nodos en una única matriz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zona C: Perspectiva de Escala -->
+    <section class="ecosystem-scale" id="ecosystemScale">
+      <div class="ecosystem-scale-canvas-wrap" id="scaleContainer">
+        <canvas id="scaleCanvas"></canvas>
+      </div>
+      <div class="ecosystem-scale-overlay">
+        <h2>Una red abierta <span class="text-gradient">al mundo.</span></h2>
+        <p>Cada punto es un nodo potencial. Cada conexión, una posibilidad de regeneración. El ecosistema crece con cada comunidad que se suma.</p>
+        <a href="sumate.html" class="btn btn-primary btn-lg mt-lg">Quiero ser parte del ecosistema</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <a href="index.html" class="logo"><img src="assets/logo.png" alt="Counity"></a>
+          <span class="footer-tagline">Ensayar el futuro de habitar</span>
+        </div>
+        <div class="footer-links">
+          <a href="manifiesto.html">Manifiesto</a>
+          <a href="como-funciona.html">Cómo funciona</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="pink-paper.html">Pink Paper</a>
+          <a href="sumate.html">Involúcrate</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/counity.land/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/mycelium.js?v=15"></script>
+  <script src="js/ecosystem-companion.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
