@@ -626,6 +626,7 @@ section {
   position: relative;
   z-index: 1;
   max-width: 900px;
+  padding-bottom: 60px;
 }
 
 .hero-tagline {
