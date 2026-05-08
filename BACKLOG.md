@@ -34,6 +34,8 @@ Nuevas tareas:
 - en la sección que es, falta el box de red de nodos
 - En la sección que es, los iconos deben tener coherencia de visual y de colores con los presentados en la home, para crear identidad.
 - [BUG] Mobile UI: La red interactiva (Mycelium) en `como-funciona.html` presenta problemas de solapamiento con los textos del Hero al quitar el blur, y la altura del canvas puede cortar la red. Reparar posicionamiento en Y (cy) y legend wraps en pantallas chicas.
+- [PERFORMANCE] Convertir imagen `lands-vision.png` (>1MB) a formato WebP para optimizar tiempos de carga, especialmente en móviles.
+- [SEGURIDAD/PERFORMANCE] Anclar (lock) versiones específicas de scripts de CDNs externos (ej. Lucide icons) en lugar de usar `@latest` para evitar quiebres y mejorar el caching.
 ---
 
 > [!TIP]
