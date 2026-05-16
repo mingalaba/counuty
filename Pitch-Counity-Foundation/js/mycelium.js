@@ -80,9 +80,10 @@
       
       // Determine alpha based on active layer
       let alpha = 0.2; // Base dim alpha
-      if (currentActiveLayer === "all" || currentActiveLayer === this.type || 
+      if (currentActiveLayer === "all" || currentActiveLayer === "weave" || currentActiveLayer === this.type || 
          (currentActiveLayer === "counit" && this.type === "foundation") ||
-         (currentActiveLayer === "land" && (this.type === "counit" || this.type === "foundation"))) {
+         (currentActiveLayer === "land" && (this.type === "counit" || this.type === "foundation")) ||
+         (currentActiveLayer === "nodo" && (this.type === "land" || this.type === "counit" || this.type === "foundation"))) {
         alpha = 1; // Full brightness for active layer
       }
 
@@ -100,14 +101,14 @@
       }
 
       const pulseR = this.r + Math.sin(time * 2 + this.pulse) * (this.type === "foundation" ? 3 : 1);
-      ctx.beginPath(); ctx.arc(sx, sy, pulseR * alpha, 0, Math.PI * 2);
+      ctx.beginPath(); ctx.arc(sx, sy, pulseR, 0, Math.PI * 2);
       ctx.fillStyle = hexAlpha(col, 0.15 * alpha);
       ctx.fill();
       ctx.strokeStyle = hexAlpha(col, (0.5 + this.glow * 0.5) * alpha);
       ctx.lineWidth = this.type === "nodo" ? 1 : 1.5;
       ctx.stroke();
 
-      ctx.beginPath(); ctx.arc(sx, sy, pulseR * 0.4 * alpha, 0, Math.PI * 2);
+      ctx.beginPath(); ctx.arc(sx, sy, pulseR * 0.4, 0, Math.PI * 2);
       ctx.fillStyle = hexAlpha(col, (0.6 + this.glow * 0.4) * alpha);
       ctx.fill();
 
@@ -148,12 +149,12 @@
       let v = 0.1;
       
       if (currentActiveLayer === "intro") v = 0.05;
-      if (currentActiveLayer === "all") v = 1;
+      if (currentActiveLayer === "all" || currentActiveLayer === "weave") v = 1;
       
       // Highlight specific connections based on layer
       if (currentActiveLayer === "counit" && this.type === "core-cu") v = 1;
       if (currentActiveLayer === "land" && (this.type === "cu-land" || this.type === "core-cu")) v = 1;
-      if (currentActiveLayer === "nodo" && this.type === "land-nodo") v = 1;
+      if (currentActiveLayer === "nodo" && (this.type === "land-nodo" || this.type === "cu-land" || this.type === "core-cu")) v = 1;
 
       const c1 = this.cp1(), c2 = this.cp2();
       ctx.beginPath();
