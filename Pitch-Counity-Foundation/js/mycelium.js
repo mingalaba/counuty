@@ -57,10 +57,17 @@
   let currentActiveLayer = "intro";
 
   function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-    cx = W / 2 + (W > 768 ? 200 : 0); // Offset to the right to leave space for text
-    cy = H / 2;
+    const dpr = window.devicePixelRatio || 1;
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // Scale canvas context for high-DPI screens
+    
+    cx = W / 2 + (W > 768 ? 200 : 0); // Offset to the right on desktop
+    cy = W > 768 ? H / 2 : H * 0.35; // Center vertically on desktop, shift up on mobile
   }
 
   // --- NODE ---
@@ -208,7 +215,14 @@
   function buildNetwork() {
     nodes = []; hyphae = []; particles = [];
     
-    const netR = Math.max(W * 0.6, 500); // Scale based on screen
+    // Scale network radius responsively to fit mobile screens
+    let netR;
+    if (W > 768) {
+      netR = Math.min(Math.max(W * 0.45, 550), 900);
+    } else {
+      netR = Math.min(Math.max(W * 0.75, 260), 380);
+    }
+    
     const coreR = netR * 0.25;
     const landR = netR * 0.5;
 
