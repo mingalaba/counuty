@@ -2366,3 +2366,268 @@ section {
   .mycelium-legend { display: none; }
 }
 
+/* ==========================================================================
+   COUNITY PINK PAPER — MULTI-STEP FORM & NETWORK MAP STYLING
+   ========================================================================== */
+
+/* Referral Welcome Bar */
+.referral-welcome-bar {
+  display: none; /* Shown dynamically in JS if ref exists */
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(1, 170, 251, 0.05);
+  border: 1px solid rgba(1, 170, 251, 0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  margin-bottom: var(--space-lg);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+.referral-welcome-bar i {
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+/* Multi-step progress bar */
+.pp-steps-progress {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: 0 auto var(--space-xl) auto;
+}
+.step-progress-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border-subtle);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.step-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--cyan);
+  transition: width var(--duration-normal) var(--ease-out);
+}
+.step-dot {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-medium);
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  z-index: 2;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.step-dot.active {
+  border-color: var(--cyan);
+  background: var(--bg-primary);
+  color: var(--cyan);
+  box-shadow: 0 0 15px rgba(1, 170, 251, 0.3);
+}
+.step-dot.completed {
+  border-color: var(--cyan);
+  background: var(--cyan);
+  color: var(--bg-primary);
+}
+
+/* Form step containers */
+.form-step {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+}
+.form-step.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+.form-group label {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+@media (max-width: 580px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+.form-actions .btn {
+  flex: 1;
+}
+
+/* Custom interactive Radio Co-Unit Cards */
+.counit-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+@media (max-width: 580px) {
+  .counit-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.selector-card {
+  position: relative;
+  cursor: pointer;
+}
+.selector-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.selector-content {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  transition: all var(--duration-fast) var(--ease-out);
+  text-align: left;
+}
+.selector-card input[type="radio"]:checked + .selector-content {
+  border-color: var(--cyan);
+  background: rgba(1, 170, 251, 0.03);
+  box-shadow: 0 0 12px rgba(1, 170, 251, 0.1);
+}
+.selector-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.selector-card input[type="radio"]:checked + .selector-content .selector-title {
+  color: var(--cyan);
+}
+.selector-desc {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+/* Step 3 (Success) Node visualization */
+.node-connecting-visualization {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-subtle);
+  margin: var(--space-md) 0 var(--space-lg) 0;
+  overflow: hidden;
+}
+.node-connecting-visualization canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.node-badge-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--bg-secondary);
+  border: 2px solid var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(1, 170, 251, 0.4);
+  z-index: 3;
+  animation: pulseNode 2s infinite ease-in-out;
+}
+@keyframes pulseNode {
+  0% { box-shadow: 0 0 15px rgba(1, 170, 251, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(1, 170, 251, 0.6); }
+  100% { box-shadow: 0 0 15px rgba(1, 170, 251, 0.3); }
+}
+
+/* Referral Sharing Box */
+.referral-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  margin-top: var(--space-lg);
+}
+.referral-box h5 {
+  font-size: var(--text-sm);
+  color: var(--cyan);
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.referral-box p {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+.referral-link-container {
+  display: flex;
+  gap: var(--space-xs);
+}
+.referral-link-container input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-secondary);
+  font-size: var(--text-xs);
+  outline: none;
+}
+.referral-link-container .btn {
+  padding: 10px 20px;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  margin-top: 0;
+  width: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+

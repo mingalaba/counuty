@@ -15,7 +15,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <a href="index.html" class="logo"><img src="assets/logo.png" alt="Counity Foundation" id="headerLogo"></a>
-            <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks">
         <a href="manifiesto.html">Manifiesto</a>
         <a href="que-es.html">Qué es</a>
         <a href="como-funciona.html">Cómo funciona</a>
@@ -43,40 +43,40 @@
     <section>
       <div class="container">
         <div class="reveal">
-          <span class="text-label">Contenido</span>
+          <span class="text-label">Ejes de Rigor</span>
           <h2 class="mt-md">Qué encontrás en el <span class="text-gradient">Pink Paper</span></h2>
         </div>
 
         <div class="pp-content-grid">
           <div class="pp-content-card reveal reveal-delay-1">
-            <div class="card-icon mb-md"><i data-lucide="eye" class="lucide" style="width:28px;height:28px;"></i></div>
-            <h4>Visión y propósito</h4>
-            <p>La narrativa completa: por qué existe Counity, qué problema aborda y cuál es la propuesta de transformación.</p>
+            <div class="card-icon mb-md"><i data-lucide="shield-check" class="lucide" style="width:28px;height:28px;"></i></div>
+            <h4>Stewardship & Land Trusts</h4>
+            <p>El marco legal no especulativo para sacar la tierra del mercado, protegiendo los entornos a través de custodias colectivas y DAOs de conservación.</p>
           </div>
           <div class="pp-content-card reveal reveal-delay-2">
-            <div class="card-icon mb-md"><i data-lucide="scale" class="lucide-pink" style="width:28px;height:28px;"></i></div>
-            <h4>Gobernanza y organización</h4>
-            <p>Cómo se toman las decisiones, la estructura de nodos y Co-Units, y el diseño del Core.</p>
+            <div class="card-icon mb-md"><i data-lucide="users" class="lucide-pink" style="width:28px;height:28px;"></i></div>
+            <h4>Sociocracia y Resting Period</h4>
+            <p>Estructura circular en base a consentimiento, círculos autónomos y la integración del resting period para madurar decisiones colectivas sin fricción.</p>
           </div>
           <div class="pp-content-card reveal reveal-delay-1">
-            <div class="card-icon mb-md"><i data-lucide="coins" class="lucide-yellow" style="width:28px;height:28px;"></i></div>
-            <h4>Economía regenerativa</h4>
-            <p>Tokens de reputación, flujos de valor, economía interna y mecanismos de sostenibilidad.</p>
+            <div class="card-icon mb-md"><i data-lucide="award" class="lucide-yellow" style="width:28px;height:28px;"></i></div>
+            <h4>Tokens de Voz (PoP & PoSw)</h4>
+            <p>Mecanismos de Proof of Presence y Proof of Sweat para tokenizar el trabajo invisible y el cuidado en tokens soulbound no transferibles, evitando la plutocracia.</p>
           </div>
           <div class="pp-content-card reveal reveal-delay-2">
-            <div class="card-icon mb-md"><i data-lucide="mountain" class="lucide" style="width:28px;height:28px;"></i></div>
-            <h4>Las Lands</h4>
-            <p>El modelo de hábitat: bioarquitectura, custodia de la tierra, regeneración ecosistémica.</p>
+            <div class="card-icon mb-md"><i data-lucide="leaf" class="lucide" style="width:28px;height:28px;"></i></div>
+            <h4>Economías para la Vida (ReFi)</h4>
+            <p>Sistemas económicos de financiamiento progresivo y autosustentado con Bonding Curves y monetización ética de servicios ecosistémicos locales.</p>
           </div>
           <div class="pp-content-card reveal reveal-delay-1">
-            <div class="card-icon mb-md"><i data-lucide="globe" class="lucide-pink" style="width:28px;height:28px;"></i></div>
-            <h4>Red y tecnología</h4>
-            <p>La infraestructura Web3 (Weave), smart contracts, y la visión tecnológica como herramienta de coordinación.</p>
+            <div class="card-icon mb-md"><i data-lucide="home" class="lucide-pink" style="width:28px;height:28px;"></i></div>
+            <h4>Bioarquitectura Pasiva</h4>
+            <p>Diseño y construcción con materiales locales y técnicas pasivas que reducen hasta un 80% el consumo energético, y micro-redes de energías compartidas.</p>
           </div>
           <div class="pp-content-card reveal reveal-delay-2">
-            <div class="card-icon mb-md"><i data-lucide="map" class="lucide-yellow" style="width:28px;height:28px;"></i></div>
-            <h4>Roadmap</h4>
-            <p>Las fases de desarrollo, los hitos clave y la visión a largo plazo del proyecto.</p>
+            <div class="card-icon mb-md"><i data-lucide="book-open" class="lucide-yellow" style="width:28px;height:28px;"></i></div>
+            <h4>Casos y Aprendizajes Reales</h4>
+            <p>Análisis crítico de proyectos pioneros en la tokenización de tierras y hábitats (Basin DAO, CAMP DAO, GoKey, KiftDAO) para evitar fallas previas.</p>
           </div>
         </div>
       </div>
@@ -84,21 +84,127 @@
 
     <!-- Form Gate para descarga -->
     <section class="section-ruptura" id="descarga">
-      <div class="container">
+      <div class="container container--narrow">
         <div class="pp-gate reveal" id="ppGate">
-          <h3>Descargá el <span class="text-gradient">Pink Paper</span></h3>
-          <p>Completá el formulario y accedé al documento completo. Queremos saber quiénes están profundizando en el proyecto.</p>
+          
+          <!-- Referral Welcome Bar -->
+          <div class="referral-welcome-bar" id="referralBar">
+            <i data-lucide="network" class="lucide-cyan"></i>
+            <span>Llegaste gracias a <strong id="referrerName" class="text-gradient">un nodo activo</strong>, que te invita a formar parte de la red de Counity.</span>
+          </div>
+
+          <!-- Step Progress Bar -->
+          <div class="pp-steps-progress">
+            <div class="step-progress-line">
+              <div class="step-progress-fill" id="stepProgressFill"></div>
+            </div>
+            <div class="step-dot active" data-step="1">1</div>
+            <div class="step-dot" data-step="2">2</div>
+            <div class="step-dot" data-step="3">3</div>
+          </div>
+
+          <h3 id="ppGateTitle">Mapeate en el ecosistema</h3>
+          <p id="ppGateDesc">Completá el formulario para ubicar tu nodo en la red y acceder al Pink Paper.</p>
 
           <form class="pp-form" id="ppForm">
-            <input type="text" name="name" placeholder="Tu nombre" required autocomplete="name">
-            <input type="email" name="email" placeholder="Tu email" required autocomplete="email">
-            <button type="submit" class="btn btn-primary">Acceder al Pink Paper</button>
+            <!-- STEP 1: Datos Personales -->
+            <div class="form-step active" data-step="1">
+              <div class="form-group">
+                <label for="userName">Tu nombre completo</label>
+                <input type="text" id="userName" name="name" placeholder="Ej. Sofía Pérez" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="userEmail">Tu correo electrónico</label>
+                <input type="email" id="userEmail" name="email" placeholder="Ej. sofia@ejemplo.com" required autocomplete="email">
+              </div>
+              <div class="form-group" id="refFieldGroup" style="display:none;">
+                <label for="referrerId">Código de invitador (autodetectado)</label>
+                <input type="text" id="referrerId" name="referrer_id" readonly>
+              </div>
+              <button type="button" class="btn btn-primary next-step" id="btnNextStep1">Siguiente Paso <span class="arrow">→</span></button>
+            </div>
+
+            <!-- STEP 2: Ubicación e Intereses -->
+            <div class="form-step" data-step="2">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="userLocation">Ubicación (Ciudad, País)</label>
+                  <input type="text" id="userLocation" name="location" placeholder="Ej. Barcelona, España" required>
+                </div>
+                <div class="form-group">
+                  <label for="userProject">Proyecto o Comunidad (Opcional)</label>
+                  <input type="text" id="userProject" name="project" placeholder="Ej. Biohuerto Co-Unit">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Área de Enfoque Principal</label>
+                <div class="counit-selector-grid">
+                  <label class="selector-card">
+                    <input type="radio" name="focus" value="co-gov" checked>
+                    <span class="selector-content">
+                      <span class="selector-title">Gobernanza</span>
+                      <span class="selector-desc">Decisiones y DAO</span>
+                    </span>
+                  </label>
+                  <label class="selector-card">
+                    <input type="radio" name="focus" value="co-regen">
+                    <span class="selector-content">
+                      <span class="selector-title">Regeneración</span>
+                      <span class="selector-desc">Ecología y Suelo</span>
+                    </span>
+                  </label>
+                  <label class="selector-card">
+                    <input type="radio" name="focus" value="co-live">
+                    <span class="selector-content">
+                      <span class="selector-title">Hábitat</span>
+                      <span class="selector-desc">Bioarquitectura</span>
+                    </span>
+                  </label>
+                  <label class="selector-card">
+                    <input type="radio" name="focus" value="co-story">
+                    <span class="selector-content">
+                      <span class="selector-title">Narrativa</span>
+                      <span class="selector-desc">Identidad y Voces</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-ghost prev-step" id="btnPrevStep2">← Atrás</button>
+                <button type="submit" class="btn btn-primary">Vincular Nodo y Descargar</button>
+              </div>
+            </div>
           </form>
 
-          <div class="pp-success">
-            <p style="color:var(--cyan);font-weight:600;">¡Gracias por tu interés!</p>
-            <p>Hacé click abajo para ver el Pink Paper completo.</p>
-            <a href="https://drive.google.com/file/d/19poh7zVsi8gdiAfrGkcXTUElcCGieDA0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-primary">Ver Pink Paper →</a>
+          <!-- STEP 3: Descarga y Enlace de Referido -->
+          <div class="pp-success" id="ppSuccess">
+            <!-- Animación de Conexión de Nodo -->
+            <div class="node-connecting-visualization">
+              <canvas id="networkCanvas"></canvas>
+              <div class="node-badge-center">
+                <i data-lucide="check" class="lucide-success" style="width:32px;height:32px;color:var(--cyan);"></i>
+              </div>
+            </div>
+
+            <h4>¡Nodo vinculado con éxito!</h4>
+            <p>Ya formas parte del mapa. Tu ID de red asignado es: <strong id="userNetworkId" class="text-gradient">usr_loading</strong></p>
+            
+            <div class="download-section mt-lg mb-lg">
+              <a href="https://drive.google.com/file/d/19poh7zVsi8gdiAfrGkcXTUElcCGieDA0/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-primary">
+                <i data-lucide="download" class="lucide" style="width:18px;height:18px;margin-right:8px;vertical-align:middle;"></i> Ver Pink Paper completo
+              </a>
+            </div>
+
+            <div class="referral-box">
+              <h5>Tu enlace de invitación único</h5>
+              <p>Compartí este link para difundir la narrativa. Al invitar a otros, sus nodos se enlazarán automáticamente a tu red de difusión, permitiéndonos mapear el ecosistema.</p>
+              <div class="referral-link-container">
+                <input type="text" id="referralUrl" readonly value="https://counity.land/pink-paper.html?ref=usr_loading">
+                <button id="copyReferralBtn" class="btn btn-secondary">Copiar</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -123,7 +229,7 @@
           <a href="index.html" class="logo"><img src="assets/logo.png" alt="Counity"></a>
           <span class="footer-tagline">Ensayar el futuro de habitar</span>
         </div>
-                        <div class="footer-links">
+        <div class="footer-links">
           <a href="manifiesto.html">Manifiesto</a>
           <a href="que-es.html">Qué es</a>
           <a href="como-funciona.html">Cómo funciona</a>

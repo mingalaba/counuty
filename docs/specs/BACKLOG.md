@@ -2,7 +2,7 @@
 
 Este backlog centraliza las tareas de evolución técnica, narrativa y operativa del ecosistema Counity. Se basa en la visión de ser un **laboratorio vivo** y un **sistema en construcción**.
 
-## 🚀 Prioridad Alta (Q2 2026)
+## 🚀 Prioridad Alta (Q3 2026)
 
 | Tarea | Categoría | Descripción | Estado |
 | :--- | :--- | :--- | :--- |
@@ -36,7 +36,3 @@ Nuevas tareas:
 - [BUG] Mobile UI: La red interactiva (Mycelium) en `como-funciona.html` presenta problemas de solapamiento con los textos del Hero al quitar el blur, y la altura del canvas puede cortar la red. Reparar posicionamiento en Y (cy) y legend wraps en pantallas chicas.
 - [PERFORMANCE] Convertir imagen `lands-vision.png` (>1MB) a formato WebP para optimizar tiempos de carga, especialmente en móviles.
 - [SEGURIDAD/PERFORMANCE] Anclar (lock) versiones específicas de scripts de CDNs externos (ej. Lucide icons) en lugar de usar `@latest` para evitar quiebres y mejorar el caching.
----
-
-> [!TIP]
-> Cada tarea técnica debe pasar por el **Filtro de Coherencia** de la Narrativa Base antes de su implementación final.
