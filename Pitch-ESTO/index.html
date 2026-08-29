@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESTO — Red Federada | Custodiar la tierra · Tejer la vida</title>
+  <meta name="description" content="Presentación Estratégica de ESTO: Red Federada de Tierras, Comunidades y Células Autónomas para la gestión de bienes comunes.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="on-intro">
+
+  <!-- Header Logo Fijo (Aparece a partir del Slide 2 en la esquina superior izquierda) -->
+  <header id="header-logo" title="ESTO — Red Federada">
+    <svg class="esto-brand-logo" viewBox="0 0 360 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ESTO Red Federada">
+      <defs>
+        <linearGradient id="headerNodeGrad" x1="6" y1="6" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#00E6B8" />
+          <stop offset="35%" stop-color="#01AAFB" />
+          <stop offset="75%" stop-color="#FE84FB" />
+          <stop offset="100%" stop-color="#FFBE02" />
+        </linearGradient>
+        <filter id="headerGlow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+          <feGaussianBlur stdDeviation="2.5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+
+      <!-- Isotipo de 4 Cuadrantes -->
+      <g filter="url(#headerGlow)" transform="translate(4, 4)">
+        <path d="M16 14 C16 14, 34 12, 38 26 C42 40, 20 40, 16 30 C12 20, 36 18, 36 18" 
+              stroke="url(#headerNodeGrad)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12 26 C12 36, 24 42, 34 38 C42 34, 38 16, 24 12 C14 9, 12 18, 12 26 Z" 
+              stroke="url(#headerNodeGrad)" stroke-width="1.4" stroke-opacity="0.4" stroke-dasharray="2.5 2.5" />
+        <circle cx="16" cy="14" r="3.6" fill="#00E6B8" />
+        <circle cx="36" cy="16" r="3.2" fill="#01AAFB" />
+        <circle cx="38" cy="32" r="3.6" fill="#FE84FB" />
+        <circle cx="16" cy="38" r="3.2" fill="#FFBE02" />
+        <circle cx="26" cy="25" r="1.8" fill="#FFFFFF" opacity="0.9" />
+      </g>
+
+      <!-- Tipografía ESTO: Graphik Bold en blanco sólido -->
+      <text x="64" y="41" font-family="'Graphik', 'Plus Jakarta Sans', sans-serif" font-size="33" font-weight="700" letter-spacing="-0.5px" fill="#FFFFFF">ESTO</text>
+
+      <!-- Descriptor Institucional -->
+      <g fill="rgba(255, 255, 255, 0.55)">
+        <line x1="178" y1="18" x2="178" y2="44" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" />
+        <text x="190" y="28" font-family="'Graphik', 'Plus Jakarta Sans', monospace" font-size="8" font-weight="600" letter-spacing="2.2" text-transform="uppercase" fill="rgba(255,255,255,0.75)">Red Federada</text>
+        <text x="190" y="41" font-family="'Graphik', 'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="400" letter-spacing="0.3" fill="rgba(255, 255, 255, 0.45)">Custodiar la tierra · Tejer la vida</text>
+      </g>
+    </svg>
+  </header>
+
+  <!-- Canvas Background (Red Micelar Interactiva de Nodos Federados) -->
+  <div id="canvas-container">
+    <canvas id="myceliumCanvas"></canvas>
+  </div>
+
+  <!-- Navigation Dots Laterales -->
+  <div class="progress-nav" id="progressNav"></div>
+
+  <!-- ============================================================
+       SLIDES CONTAINER (Pitch Estratégico & Informativo ESTO)
+       ============================================================ -->
+  <div id="slides-container">
+    
+    <!-- Slide 1: Portada Estratégica -->
+    <section class="slide active" id="slide-1" data-layer="intro">
+      <div class="slide-content center-slide hero-slide-content">
+        
+        <!-- Logo Hero Integrado con Separación Nítida -->
+        <div class="hero-logo-box">
+          <svg class="hero-brand-logo" viewBox="0 0 360 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="heroNodeGrad" x1="6" y1="6" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00E6B8" />
+                <stop offset="35%" stop-color="#01AAFB" />
+                <stop offset="75%" stop-color="#FE84FB" />
+                <stop offset="100%" stop-color="#FFBE02" />
+              </linearGradient>
+              <filter id="heroGlow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+                <feGaussianBlur stdDeviation="3.5" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <g filter="url(#heroGlow)" transform="translate(4, 4)">
+              <path d="M16 14 C16 14, 34 12, 38 26 C42 40, 20 40, 16 30 C12 20, 36 18, 36 18" stroke="url(#heroNodeGrad)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 26 C12 36, 24 42, 34 38 C42 34, 38 16, 24 12 C14 9, 12 18, 12 26 Z" stroke="url(#heroNodeGrad)" stroke-width="1.4" stroke-opacity="0.4" stroke-dasharray="2.5 2.5" />
+              <circle cx="16" cy="14" r="3.6" fill="#00E6B8" />
+              <circle cx="36" cy="16" r="3.2" fill="#01AAFB" />
+              <circle cx="38" cy="32" r="3.6" fill="#FE84FB" />
+              <circle cx="16" cy="38" r="3.2" fill="#FFBE02" />
+              <circle cx="26" cy="25" r="1.8" fill="#FFFFFF" opacity="0.9" />
+            </g>
+            <text x="64" y="41" font-family="'Graphik', 'Plus Jakarta Sans', sans-serif" font-size="33" font-weight="700" letter-spacing="-0.5px" fill="#FFFFFF">ESTO</text>
+            <g fill="rgba(255, 255, 255, 0.55)">
+              <line x1="178" y1="18" x2="178" y2="44" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" />
+              <text x="190" y="28" font-family="'Graphik', 'Plus Jakarta Sans', monospace" font-size="8" font-weight="600" letter-spacing="2.2" text-transform="uppercase" fill="rgba(255,255,255,0.75)">Red Federada</text>
+              <text x="190" y="41" font-family="'Graphik', 'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="400" letter-spacing="0.3" fill="rgba(255, 255, 255, 0.45)">Custodiar la tierra · Tejer la vida</text>
+            </g>
+          </svg>
+        </div>
+
+        <span class="slide-tag">RED FEDERADA · SISTEMA OPERATIVO</span>
+        <h2>ESTO <span class="text-gradient">Red Federada</span></h2>
+        <p class="hero-slogan">« Custodiar la tierra · Tejer la vida »</p>
+        <p>Una red federada de tierras, comunidades y células autónomas para gestionar los bienes comunes y regenerar el territorio.</p>
+        <p class="scroll-hint">Scroll o Flechas para avanzar</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: El Diagnóstico Profundo -->
+    <section class="slide" id="slide-2" data-layer="intro">
+      <div class="slide-content">
+        <span class="slide-tag">EL DIAGNÓSTICO ESTRUCTURAL</span>
+        <h2>La pérdida de agencia y la privatización de lo común.</h2>
+        <p>El modelo industrial contemporáneo despoja a las personas de su autonomía sobre lo vital, transformando el hábitat en mercancía y a los ciudadanos en consumidores dependientes. Las alternativas aisladas se agotan intentando resistir en soledad.</p>
+        <div class="slide-grid-2">
+          <div class="slide-box">
+            <div class="slide-box-title"><span class="highlight-cyan">01</span> Mercantilización & Pérdida de Agencia</div>
+            <p>Los bienes comunes (tierra, agua, energía) capturados por la especulación, dejando a las personas sin poder de decisión sobre sus condiciones de vida.</p>
+          </div>
+          <div class="slide-box">
+            <div class="slide-box-title"><span class="highlight-pink">02</span> La Trampa del Aislamiento</div>
+            <p>Proyectos individuales que colapsan por falta de blindaje institucional, relevo y una red federada que sostenga su autonomía.</p>
+          </div>
+        </div>
+        <p style="margin-top: 0.95rem;">No necesitamos más islas ecológicas aisladas; necesitamos un <strong>sistema operativo federado</strong> para gestionar los bienes comunes y recuperar la agencia colectiva sobre el futuro.</p>
+      </div>
+    </section>
+
+    <!-- Slide 3: Nuestra Postura Política -->
+    <section class="slide" id="slide-3" data-layer="intro">
+      <div class="slide-content">
+        <span class="slide-tag">BIENES COMUNES & SOBERANÍA</span>
+        <h2>Gestión de lo común y recuperación de la agencia.</h2>
+        <p class="highlight-quote">« La tierra y lo vital no son mercancías; son bienes comunes que custodiamos colectivamente para devolverle el poder a las personas. »</p>
+        <p>• <strong>Custodia de Bienes Comunes vs Especulación:</strong> El suelo, las fuentes de agua y la infraestructura no se adquieren para comerciar con plusvalía. Se resguardan en fideicomisos y cooperativas inalienables, asegurando su usufructo ético a perpetuidad.<br>
+           • <strong>Recuperación de la Agencia Colectiva:</strong> Las comunidades deciden sobre su hábitat, su energía y sus acuerdos, superando la dependencia de intermediarios corporativos y burocracias externas.<br>
+           • <strong>Economía de lo Común (Proof of Sweat):</strong> Des-financiarizar lo cotidiano mediante reciprocidad, bancos de tiempo y trabajo colaborativo reconocido.</p>
+      </div>
+    </section>
+
+    <!-- Slide 4: Qué es ESTO -->
+    <section class="slide" id="slide-4" data-layer="all">
+      <div class="slide-content">
+        <span class="slide-tag">CONVERGENCIA EN RED</span>
+        <h2>Una Red Federada de <span class="text-gradient">Soberanías Vivas</span></h2>
+        <p><strong>ESTO</strong> no es una ecovilla individual ni una estructura centralizada. Es una <strong>red federada de personas, colectivos y territorios para gobernar lo común</strong>.</p>
+        <p>• <strong>Gobernanza Dinámica Distribuida:</strong> Diseñada para combinar soberanía local con escala federada, hibridando toma de decisiones por consentimiento y acuerdos descentralizados.<br>
+           • <strong>Autonomía + Interdependencia:</strong> Cada territorio y colectivo mantiene su identidad, cultura y trayectoria propia, compartiendo blindaje legal e institucional de los bienes custodiados, herramientas libres de gobernanza, red de saberes y fondo de custodia territorial.</p>
+      </div>
+    </section>
+
+    <!-- Slide 5: Cómo Operamos: Las 4 Capas -->
+    <section class="slide" id="slide-5" data-layer="counit">
+      <div class="slide-content">
+        <span class="slide-tag">ARQUITECTURA DEL SISTEMA</span>
+        <h2>Un Sistema Operativo en <span class="text-gradient">4 Capas Sinérgicas</span></h2>
+        <p>La estructura que permite gobernar los bienes comunes y potenciar la agencia local sin jerarquías tradicionales:</p>
+        <div class="slide-grid-2">
+          <div class="slide-box">
+            <div class="slide-box-title" style="color: #00E6B8;">01 · Fundación & Custodia (Núcleo Común)</div>
+            <p>Resguardo constitucional, administración del tesoro común y blindaje jurídico de los bienes colectivos.</p>
+          </div>
+          <div class="slide-box">
+            <div class="slide-box-title" style="color: #00BCD4;">02 · Los Estomas (Órganos Vivos)</div>
+            <p>Células autónomas de especialización y servicio: <em>Estoma Regeneración, Estoma Hábitat, Estoma Gobernanza, Estoma Cuidados, Estoma Saberes y Estoma Narrativas</em>.</p>
+          </div>
+          <div class="slide-box">
+            <div class="slide-box-title" style="color: #D4A017;">03 · Territorios & Nodos en Red</div>
+            <p>Espacios físicos donde se encarnan los bienes comunes, se vive el protocolo y se retroalimenta en condiciones reales.</p>
+          </div>
+          <div class="slide-box">
+            <div class="slide-box-title" style="color: var(--pink);">04 · Infraestructura Digital Wave</div>
+            <p>Herramientas de software para gobernanza dinámica, trazabilidad de acuerdos y bancos de reciprocidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide Intermedio: Pase Vacío para Visualización Pura de la Red Micelar -->
+    <section class="slide slide-network-showcase" id="slide-network" data-layer="all">
+      <!-- Pase interactivo en pantalla completa: se visualiza exclusivamente la red de micelio -->
+    </section>
+
+    <!-- Slide 6: El Sistema en la Práctica -->
+    <section class="slide" id="slide-6" data-layer="counit">
+      <div class="slide-content">
+        <span class="slide-tag">MÉTODO & OPERACIÓN</span>
+        <h2>De la visión a la práctica: Cómo opera el sistema.</h2>
+        <p>La sostenibilidad de los bienes comunes no depende del entusiasmo inicial, sino de la solidez de sus acuerdos y prácticas cotidianas:</p>
+        <p>• <strong>Gobernanza Dinámica:</strong> Procesos de decisión ágiles basados en la ausencia de objeciones fundamentadas sobre el propósito común. Se supera la parálisis del asambleísmo y el verticalismo corporativo.<br>
+           • <strong>Economías de Reciprocidad & Proof of Sweat:</strong> Registro y valoración de aportes reales en tiempo, trabajo concreto y cuidados, reduciendo los costos fijos de vida en territorio.<br>
+           • <strong>Cuidado Vincular Estructurado:</strong> Protocolos explícitos de mediación pacífica (CNV), clarificación de roles y resolución ágil de tensiones para cuidar a las personas que sostienen los procesos.</p>
+      </div>
+    </section>
+
+    <!-- Slide 7: Diversidad de Biomas y Laboratorios Territoriales -->
+    <section class="slide" id="slide-7" data-layer="land">
+      <div class="slide-content">
+        <span class="slide-tag">TERRITORIOS & ESCENARIOS</span>
+        <h2>Laboratorios Vivos en Múltiples Biomas</h2>
+        <p>El protocolo de bienes comunes de ESTO se prueba y adapta continuamente a las particularidades ecológicas y sociales de diversos escenarios:</p>
+        <p>• <strong>Biomas de Humedal & Cuencas:</strong> Gestión comunitaria del agua, hábitats del futuro con materiales del entorno, apicultura y vida comunitaria en ecosistemas anfibios.<br>
+           • <strong>Biomas Pampeanos & Costeros:</strong> Centros de inmersión formativa, regeneración de suelos, encuentros y pedagogía comunitaria.<br>
+           • <strong>Redes Agroalimentarias:</strong> Alianzas estratégicas con productores de la tierra para garantizar soberanía alimentaria y circuitos cortos.<br>
+           • <strong>Hábitats Urbanos Integrados:</strong> Cohousing, talleres de oficios compartidos y autogestión de servicios en entornos metropolitanos.</p>
+      </div>
+    </section>
+
+    <!-- Slide 8: Convergencia Estratégica -->
+    <section class="slide" id="slide-8" data-layer="all">
+      <div class="slide-content center-slide">
+        <span class="slide-tag">VISIÓN ECOSISTÉMICA</span>
+        <h2>Interoperabilidad y <span class="text-gradient">Convergencia Regenerativa</span></h2>
+        <p>El cambio de época exige madurez: la fragmentación y la competencia entre proyectos regenerativos es un anacronismo que debilita el movimiento.</p>
+        <p style="max-width: 880px; margin: 0 auto 1.5rem auto;">Sostenemos una postura clara de <strong>interoperabilidad y colaboración federada</strong>: diálogo y compatibilidad entre herramientas de gobernanza dinámica y soberanía digital, blindaje colectivo de bienes comunes para preservarlos de la especulación inmobiliaria, y circulación abierta de aprendizajes para acelerar la transición hacia nuevas formas de habitar.</p>
+        <p class="hero-slogan" style="margin-top: 1.5rem;">« Custodiar la tierra · Tejer la vida »</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/mycelium.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

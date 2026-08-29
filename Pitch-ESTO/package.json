@@ -1,0 +1,11 @@
+{
+  "name": "pitch-esto",
+  "version": "1.0.0",
+  "description": "ESTO — Red Federada | Presentación Estratégica",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["esto", "red-federada", "pitch"],
+  "author": "Counity",
+  "license": "MIT"
+}
